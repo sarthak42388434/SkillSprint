@@ -1,0 +1,2014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Math Games Online - Interactive Mental Math Practice for Kids | Free Math Games</title>
+    <meta name="description" content="Play 10+ free interactive math games online! Perfect for kids ages 6-13, students, parents & teachers. Addition, subtraction, multiplication games with no download required.">
+    <meta name="keywords" content="fast math games online, mental math game for kids, free math practice games no download, play addition and multiplication games, math skills game for students">
+    <meta name="author" content="Fast Math Games">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Fast Math Games Online - Interactive Mental Math Practice for Kids">
+    <meta property="og:description" content="Play 10+ free interactive math games online! Perfect for kids, students, parents & teachers. No download required.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fastmathgames.com">
+    <meta property="og:image" content="https://fastmathgames.com/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fast Math Games Online - Interactive Mental Math Practice">
+    <meta name="twitter:description" content="Play 10+ free interactive math games online! Perfect for kids, students, parents & teachers.">
+    <meta name="twitter:image" content="https://fastmathgames.com/twitter-card.jpg">
+    
+    <!-- Favicon and App Icons -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🧮</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>🧮</text></svg>">
+    
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="data:application/json,{'name':'Fast Math Games','short_name':'MathGames','description':'Interactive math games for kids','start_url':'/','display':'standalone','background_color':'%23ffffff','theme_color':'%234F46E5','icons':[{'src':'data:image/svg+xml,<svg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'><text y=\'0.9em\' font-size=\'90\'>🧮</text></svg>','sizes':'192x192','type':'image/svg+xml'}]}">
+    
+    <!-- External Libraries -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Fast Math Games Online",
+        "url": "https://fastmathgames.com",
+        "description": "Interactive math games for kids, students, parents and teachers",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://fastmathgames.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Are these math games free to play?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! All our math games are completely free to play online with no download required."
+                }
+            },
+            {
+                "@type": "Question", 
+                "name": "What age group are these games suitable for?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our math games are designed for kids ages 6-13, but are suitable for anyone wanting to improve their mental math skills."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
+
+    <style>
+        :root {
+            --primary-color: #4F46E5;
+            --secondary-color: #10B981;
+            --accent-color: #F59E0B;
+            --danger-color: #EF4444;
+            --dark-bg: #1F2937;
+            --dark-card: #374151;
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .game-title {
+            font-family: 'Fredoka One', cursive;
+        }
+        
+        .dark-mode {
+            background-color: var(--dark-bg);
+            color: white;
+        }
+        
+        .dark-mode .bg-white {
+            background-color: var(--dark-card) !important;
+            color: white;
+        }
+        
+        .game-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: linear-gradient(90deg, #4F46E5, #10B981);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+        
+        .celebration {
+            animation: celebrate 0.6s ease-in-out;
+        }
+        
+        @keyframes celebrate {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse-green {
+            animation: pulseGreen 0.5s ease-in-out;
+        }
+        
+        @keyframes pulseGreen {
+            0% { background-color: transparent; }
+            50% { background-color: #10B981; color: white; }
+            100% { background-color: transparent; }
+        }
+        
+        .pulse-red {
+            animation: pulseRed 0.5s ease-in-out;
+        }
+        
+        @keyframes pulseRed {
+            0% { background-color: transparent; }
+            50% { background-color: #EF4444; color: white; }
+            100% { background-color: transparent; }
+        }
+        
+        .math-input {
+            transition: all 0.2s ease;
+        }
+        
+        .math-input:focus {
+            transform: scale(1.05);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+        
+        .game-area {
+            min-height: 400px;
+        }
+        
+        .memory-card {
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        
+        .memory-card-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        
+        .memory-card.flipped .memory-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .memory-card-front, .memory-card-back {
+            backface-visibility: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .memory-card-back {
+            transform: rotateY(180deg);
+        }
+        
+        @media (max-width: 768px) {
+            .game-card {
+                margin-bottom: 1rem;
+            }
+        }
+        
+        .ad-placeholder {
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-weight: 500;
+            min-height: 100px;
+        }
+        
+        .adsense-container {
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <span class="text-2xl">🧮</span>
+                    <h1 class="ml-2 text-xl font-bold game-title text-indigo-600">Fast Math Games</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center space-x-2">
+                        <span class="text-sm">🏆</span>
+                        <span id="totalScore" class="text-sm font-semibold">0 XP</span>
+                    </div>
+                    <button id="themeToggle" class="p-2 rounded-full hover:bg-gray-100 transition-colors">
+                        <i class="fas fa-moon text-gray-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Hero Section -->
+        <section class="text-center mb-12 fade-in">
+            <h2 class="text-4xl md:text-5xl font-bold game-title text-gray-800 mb-4">
+                Play Fast Math Games Online
+            </h2>
+            <p class="text-xl text-gray-600 mb-2">No Download, Just Fun!</p>
+            <p class="text-lg text-gray-600 max-w-4xl mx-auto mb-8">
+                Welcome to the ultimate collection of interactive math games! Perfect for students, kids, parents, and teachers looking to improve mental math skills through engaging gameplay. Train your brain with addition, subtraction, multiplication, division, and more - all designed to make learning math fun and effective.
+            </p>
+            <div class="inline-flex items-center bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-full font-semibold shadow-lg">
+                <span class="mr-2">🚀</span>
+                Start training your brain now with fast math games!
+            </div>
+        </section>
+
+        <!-- AdSense Placeholder 1 -->
+        <div class="adsense-container">
+            <div class="ad-placeholder rounded-lg">
+                <div class="text-center">
+                    <i class="fas fa-ad text-2xl mb-2"></i>
+                    <div>Advertisement Space</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Games Grid -->
+        <section class="mb-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gamesGrid">
+                <!-- Games will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- AdSense Placeholder 2 -->
+        <div class="adsense-container">
+            <div class="ad-placeholder rounded-lg">
+                <div class="text-center">
+                    <i class="fas fa-ad text-2xl mb-2"></i>
+                    <div>Advertisement Space</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features Section -->
+        <section class="mb-12">
+            <h3 class="text-3xl font-bold text-center mb-8 game-title">Why Choose Our Math Games?</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-4xl mb-4">🎯</div>
+                    <h4 class="font-semibold mb-2">Skill-Building</h4>
+                    <p class="text-gray-600">Develop mental math skills through progressive difficulty levels</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-4xl mb-4">🏆</div>
+                    <h4 class="font-semibold mb-2">Achievement System</h4>
+                    <p class="text-gray-600">Track progress with XP points and high score leaderboards</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h4 class="font-semibold mb-2">Mobile Friendly</h4>
+                    <p class="text-gray-600">Play on any device - phones, tablets, or computers</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Game Modal -->
+    <div id="gameModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 id="gameTitle" class="text-2xl font-bold game-title"></h3>
+                    <button id="closeGame" class="text-gray-500 hover:text-gray-700 text-2xl">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div id="gameContent" class="game-area">
+                    <!-- Game content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div>
+                    <h4 class="font-semibold mb-4 game-title">Fast Math Games</h4>
+                    <p class="text-gray-300">Making math fun and accessible for everyone!</p>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Games</h5>
+                    <ul class="space-y-2 text-gray-300">
+                        <li>Addition Sprint</li>
+                        <li>Multiplication Master</li>
+                        <li>Division Dash</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Resources</h5>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" onclick="showStaticPage('faq')" class="hover:text-white">FAQ</a></li>
+                        <li><a href="#" onclick="showStaticPage('tips')" class="hover:text-white">Math Tips</a></li>
+                        <li><a href="#" onclick="showStaticPage('contact')" class="hover:text-white">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-semibold mb-4">Legal</h5>
+                    <ul class="space-y-2 text-gray-300">
+                        <li><a href="#" onclick="showStaticPage('privacy')" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="#" onclick="showStaticPage('terms')" class="hover:text-white">Terms of Use</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
+                <p>&copy; 2024 Fast Math Games. All rights reserved. | Made with ❤️ for learners everywhere</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Static Pages Modal -->
+    <div id="staticPageModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl w-full max-h-screen overflow-y-auto">
+            <div class="p-6">
+                <div class="flex justify-between items-center mb-4">
+                    <h3 id="staticPageTitle" class="text-2xl font-bold"></h3>
+                    <button id="closeStaticPage" class="text-gray-500 hover:text-gray-700 text-2xl">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div id="staticPageContent" class="prose max-w-none">
+                    <!-- Static page content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Game Data and Configuration
+        const games = [
+            {
+                id: 'addition-sprint',
+                title: 'Addition Sprint',
+                description: 'Solve additions in 60 seconds',
+                detail: 'Race against time solving addition problems. Perfect for building speed and accuracy with basic math facts.',
+                icon: '➕',
+                color: 'bg-blue-500',
+                difficulty: ['Easy (1-10)', 'Medium (1-50)', 'Hard (1-100)']
+            },
+            {
+                id: 'subtraction-blast',
+                title: 'Subtraction Blast',
+                description: 'Fast subtraction with streaks',
+                detail: 'Master subtraction with streak multipliers that reward consecutive correct answers. Build confidence and speed!',
+                icon: '➖',
+                color: 'bg-red-500',
+                difficulty: ['Easy (1-10)', 'Medium (1-50)', 'Hard (1-100)']
+            },
+            {
+                id: 'multiplication-master',
+                title: 'Multiplication Master',
+                description: 'Quickfire times tables',
+                detail: 'Become a multiplication expert! Practice times tables from 1-12 with increasing difficulty levels.',
+                icon: '✖️',
+                color: 'bg-green-500',
+                difficulty: ['Easy (1-5)', 'Medium (1-10)', 'Hard (1-12)']
+            },
+            {
+                id: 'division-dash',
+                title: 'Division Dash',
+                description: 'Divide and conquer with speed',
+                detail: 'Challenge yourself with division problems that test both speed and accuracy. Great for advanced learners!',
+                icon: '➗',
+                color: 'bg-purple-500',
+                difficulty: ['Easy (÷2,5,10)', 'Medium (÷1-10)', 'Hard (÷1-12)']
+            },
+            {
+                id: 'math-match',
+                title: 'Math Match',
+                description: 'Match equations to answers',
+                detail: 'Drag and drop to match math problems with their correct answers. Fun way to practice multiple operations!',
+                icon: '🔗',
+                color: 'bg-yellow-500',
+                difficulty: ['Easy', 'Medium', 'Hard']
+            },
+            {
+                id: 'number-ninja',
+                title: 'Number Ninja',
+                description: 'Tap only correct answers',
+                detail: 'Test your reflexes! Tap or click only the correct answers as numbers scroll across the screen.',
+                icon: '🥷',
+                color: 'bg-indigo-500',
+                difficulty: ['Slow', 'Medium', 'Fast']
+            },
+            {
+                id: 'estimation-challenge',
+                title: 'Estimation Challenge',
+                description: 'Choose the closest value',
+                detail: 'Develop number sense with estimation problems. Choose the closest answer to percentages and complex calculations.',
+                icon: '🎯',
+                color: 'bg-pink-500',
+                difficulty: ['Easy', 'Medium', 'Hard']
+            },
+            {
+                id: 'math-duel',
+                title: 'Math Duel',
+                description: '2-player side-by-side',
+                detail: 'Challenge a friend! Compete side-by-side to see who can solve math problems faster. Perfect for classroom use!',
+                icon: '⚔️',
+                color: 'bg-orange-500',
+                difficulty: ['Easy', 'Medium', 'Hard']
+            },
+            {
+                id: 'equation-race',
+                title: 'Equation Race',
+                description: 'Mixed operations under pressure',
+                detail: 'Solve complex equations with mixed operations following order of operations (PEMDAS). Advanced challenge mode!',
+                icon: '🏁',
+                color: 'bg-teal-500',
+                difficulty: ['Medium', 'Hard', 'Expert']
+            },
+            {
+                id: 'memory-math-mix',
+                title: 'Memory Math Mix',
+                description: 'Match hidden math answers',
+                detail: 'Combine memory skills with math! Flip cards to match math problems with their correct answers.',
+                icon: '🧠',
+                color: 'bg-cyan-500',
+                difficulty: ['4x4 Grid', '6x4 Grid', '6x6 Grid']
+            }
+        ];
+
+        // Global Variables
+        let currentGame = null;
+        let gameState = {};
+        let isDarkMode = false;
+        let totalXP = parseInt(localStorage.getItem('totalXP') || '0');
+
+        // Initialize App
+        document.addEventListener('DOMContentLoaded', function() {
+            renderGames();
+            updateTotalScore();
+            initializeEventListeners();
+            loadTheme();
+        });
+
+        // Theme Toggle
+        function initializeEventListeners() {
+            document.getElementById('themeToggle').addEventListener('click', toggleTheme);
+            document.getElementById('closeGame').addEventListener('click', closeGame);
+            document.getElementById('closeStaticPage').addEventListener('click', closeStaticPage);
+            
+            // Close modals on outside click
+            document.getElementById('gameModal').addEventListener('click', function(e) {
+                if (e.target === this) closeGame();
+            });
+            
+            document.getElementById('staticPageModal').addEventListener('click', function(e) {
+                if (e.target === this) closeStaticPage();
+            });
+        }
+
+        function toggleTheme() {
+            isDarkMode = !isDarkMode;
+            const body = document.body;
+            const themeIcon = document.querySelector('#themeToggle i');
+            
+            if (isDarkMode) {
+                body.classList.add('dark-mode');
+                themeIcon.className = 'fas fa-sun text-yellow-400';
+                localStorage.setItem('theme', 'dark');
+            } else {
+                body.classList.remove('dark-mode');
+                themeIcon.className = 'fas fa-moon text-gray-600';
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        function loadTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                isDarkMode = true;
+                toggleTheme();
+            }
+        }
+
+        // Render Games Grid
+        function renderGames() {
+            const gamesGrid = document.getElementById('gamesGrid');
+            gamesGrid.innerHTML = '';
+            
+            games.forEach((game, index) => {
+                const gameCard = document.createElement('div');
+                gameCard.className = 'game-card bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-all';
+                gameCard.innerHTML = `
+                    <div class="flex items-center mb-4">
+                        <div class="text-3xl mr-3">${game.icon}</div>
+                        <div>
+                            <h3 class="text-xl font-bold game-title">${game.title}</h3>
+                            <p class="text-gray-600">${game.description}</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4">${game.detail}</p>
+                    <div class="flex justify-between items-center">
+                        <div class="text-sm text-gray-500">
+                            <i class="fas fa-trophy mr-1"></i>
+                            High Score: <span id="highScore-${game.id}">${getHighScore(game.id)}</span>
+                        </div>
+                        <button class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition-colors">
+                            Play Now
+                        </button>
+                    </div>
+                `;
+                
+                gameCard.addEventListener('click', () => openGame(game));
+                gamesGrid.appendChild(gameCard);
+                
+                // Add AdSense placeholder after every 3 games
+                if ((index + 1) % 3 === 0 && index < games.length - 1) {
+                    const adContainer = document.createElement('div');
+                    adContainer.className = 'col-span-full adsense-container';
+                    adContainer.innerHTML = `
+                        <div class="ad-placeholder rounded-lg">
+                            <div class="text-center">
+                                <i class="fas fa-ad text-2xl mb-2"></i>
+                                <div>Advertisement Space</div>
+                            </div>
+                        </div>
+                    `;
+                    gamesGrid.appendChild(adContainer);
+                }
+            });
+        }
+
+        // Game Management
+        function openGame(game) {
+            currentGame = game;
+            document.getElementById('gameTitle').textContent = game.title;
+            document.getElementById('gameModal').classList.remove('hidden');
+            renderGameContent(game);
+        }
+
+        function closeGame() {
+            document.getElementById('gameModal').classList.add('hidden');
+            currentGame = null;
+            gameState = {};
+        }
+
+        function renderGameContent(game) {
+            const gameContent = document.getElementById('gameContent');
+            
+            // Common game header
+            gameContent.innerHTML = `
+                <div class="mb-6">
+                    <div class="flex flex-wrap items-center justify-between mb-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="text-2xl">${game.icon}</div>
+                            <div>
+                                <h4 class="font-semibold">Score: <span id="currentScore">0</span></h4>
+                                <p class="text-sm text-gray-600">Time: <span id="gameTimer">60</span>s</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <label for="difficulty" class="text-sm font-medium">Difficulty:</label>
+                            <select id="difficulty" class="border rounded px-2 py-1">
+                                ${game.difficulty.map((diff, i) => `<option value="${i}">${diff}</option>`).join('')}
+                            </select>
+                            <button id="startGame" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                                Start Game
+                            </button>
+                        </div>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2 mb-4">
+                        <div id="progressBar" class="progress-bar h-2 rounded-full" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div id="gameArea" class="text-center">
+                    <div class="text-gray-500 text-lg">
+                        <i class="fas fa-play-circle text-4xl mb-4"></i>
+                        <p>Select difficulty and click "Start Game" to begin!</p>
+                    </div>
+                </div>
+                <div id="gameResults" class="hidden mt-6 text-center">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h5 class="text-xl font-bold mb-2">Game Over!</h5>
+                        <p class="text-lg mb-2">Final Score: <span id="finalScore">0</span></p>
+                        <p class="text-sm text-gray-600 mb-4">XP Earned: <span id="xpEarned">0</span></p>
+                        <div class="adsense-container mb-4">
+                            <div class="ad-placeholder rounded">
+                                <div class="text-center">
+                                    <i class="fas fa-ad text-xl mb-1"></i>
+                                    <div class="text-sm">Advertisement</div>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="playAgain" class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 mr-2">
+                            Play Again
+                        </button>
+                        <button onclick="closeGame()" class="bg-gray-500 text-white px-6 py-2 rounded-lg hover:bg-gray-600">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // Add event listeners
+            document.getElementById('startGame').addEventListener('click', () => startGame(game));
+            
+            // Initialize specific game logic
+            initializeGameLogic(game);
+        }
+
+        function startGame(game) {
+            const difficulty = parseInt(document.getElementById('difficulty').value);
+            gameState = {
+                score: 0,
+                timeLeft: 60,
+                difficulty: difficulty,
+                isPlaying: true,
+                streak: 0,
+                totalQuestions: 0,
+                correctAnswers: 0
+            };
+            
+            document.getElementById('currentScore').textContent = '0';
+            document.getElementById('gameTimer').textContent = '60';
+            document.getElementById('progressBar').style.width = '0%';
+            document.getElementById('gameResults').classList.add('hidden');
+            
+            // Start timer
+            gameState.timer = setInterval(() => {
+                gameState.timeLeft--;
+                document.getElementById('gameTimer').textContent = gameState.timeLeft;
+                
+                const progress = ((60 - gameState.timeLeft) / 60) * 100;
+                document.getElementById('progressBar').style.width = progress + '%';
+                
+                if (gameState.timeLeft <= 0) {
+                    endGame(game);
+                }
+            }, 1000);
+            
+            // Start specific game
+            switch(game.id) {
+                case 'addition-sprint':
+                    startAdditionSprint();
+                    break;
+                case 'subtraction-blast':
+                    startSubtractionBlast();
+                    break;
+                case 'multiplication-master':
+                    startMultiplicationMaster();
+                    break;
+                case 'division-dash':
+                    startDivisionDash();
+                    break;
+                case 'math-match':
+                    startMathMatch();
+                    break;
+                case 'number-ninja':
+                    startNumberNinja();
+                    break;
+                case 'estimation-challenge':
+                    startEstimationChallenge();
+                    break;
+                case 'math-duel':
+                    startMathDuel();
+                    break;
+                case 'equation-race':
+                    startEquationRace();
+                    break;
+                case 'memory-math-mix':
+                    startMemoryMathMix();
+                    break;
+            }
+        }
+
+        function endGame(game) {
+            if (!gameState.isPlaying) return;
+            
+            gameState.isPlaying = false;
+            clearInterval(gameState.timer);
+            
+            // Calculate XP
+            const baseXP = gameState.score;
+            const accuracyBonus = gameState.totalQuestions > 0 ? 
+                Math.floor((gameState.correctAnswers / gameState.totalQuestions) * 50) : 0;
+            const difficultyBonus = (gameState.difficulty + 1) * 10;
+            const xpEarned = baseXP + accuracyBonus + difficultyBonus;
+            
+            // Update totals
+            totalXP += xpEarned;
+            localStorage.setItem('totalXP', totalXP.toString());
+            updateTotalScore();
+            
+            // Update high score
+            const currentHighScore = getHighScore(game.id);
+            if (gameState.score > currentHighScore) {
+                setHighScore(game.id, gameState.score);
+                document.getElementById(`highScore-${game.id}`).textContent = gameState.score;
+                playSound('achievement');
+            }
+            
+            // Show results
+            document.getElementById('finalScore').textContent = gameState.score;
+            document.getElementById('xpEarned').textContent = xpEarned;
+            document.getElementById('gameResults').classList.remove('hidden');
+            
+            // Add play again listener
+            document.getElementById('playAgain').addEventListener('click', () => startGame(game));
+            
+            playSound('gameOver');
+        }
+
+        // Individual Game Logic
+        function initializeGameLogic(game) {
+            // Common initialization for all games
+        }
+
+        function startAdditionSprint() {
+            showNewProblem();
+            
+            function showNewProblem() {
+                if (!gameState.isPlaying) return;
+                
+                const maxNum = gameState.difficulty === 0 ? 10 : gameState.difficulty === 1 ? 50 : 100;
+                const num1 = Math.floor(Math.random() * maxNum) + 1;
+                const num2 = Math.floor(Math.random() * maxNum) + 1;
+                const answer = num1 + num2;
+                
+                gameState.currentAnswer = answer;
+                gameState.totalQuestions++;
+                
+                document.getElementById('gameArea').innerHTML = `
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-6">${num1} + ${num2} = ?</div>
+                        <input type="number" id="answerInput" class="math-input text-2xl text-center border-2 border-gray-300 rounded-lg px-4 py-2 w-32" placeholder="?">
+                        <button id="submitAnswer" class="ml-4 bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">Submit</button>
+                    </div>
+                `;
+                
+                const input = document.getElementById('answerInput');
+                const submitBtn = document.getElementById('submitAnswer');
+                
+                input.focus();
+                input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') checkAnswer();
+                });
+                submitBtn.addEventListener('click', checkAnswer);
+                
+                function checkAnswer() {
+                    const userAnswer = parseInt(input.value);
+                    if (userAnswer === answer) {
+                        gameState.score += (gameState.difficulty + 1) * 10;
+                        gameState.streak++;
+                        gameState.correctAnswers++;
+                        document.getElementById('currentScore').textContent = gameState.score;
+                        input.classList.add('pulse-green');
+                        playSound('correct');
+                        setTimeout(() => {
+                            input.classList.remove('pulse-green');
+                            showNewProblem();
+                        }, 500);
+                    } else {
+                        gameState.streak = 0;
+                        input.classList.add('pulse-red');
+                        playSound('incorrect');
+                        setTimeout(() => {
+                            input.classList.remove('pulse-red');
+                            input.value = '';
+                            input.focus();
+                        }, 500);
+                    }
+                }
+            }
+        }
+
+        function startSubtractionBlast() {
+            showNewProblem();
+            
+            function showNewProblem() {
+                if (!gameState.isPlaying) return;
+                
+                const maxNum = gameState.difficulty === 0 ? 10 : gameState.difficulty === 1 ? 50 : 100;
+                let num1 = Math.floor(Math.random() * maxNum) + 1;
+                let num2 = Math.floor(Math.random() * maxNum) + 1;
+                
+                // Ensure num1 >= num2 for positive results
+                if (num1 < num2) [num1, num2] = [num2, num1];
+                
+                const answer = num1 - num2;
+                gameState.currentAnswer = answer;
+                gameState.totalQuestions++;
+                
+                document.getElementById('gameArea').innerHTML = `
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-6">${num1} - ${num2} = ?</div>
+                        <div class="mb-4">
+                            <span class="text-sm bg-blue-100 px-2 py-1 rounded">Streak: ${gameState.streak}</span>
+                            <span class="text-sm bg-green-100 px-2 py-1 rounded ml-2">Multiplier: x${Math.min(gameState.streak + 1, 5)}</span>
+                        </div>
+                        <input type="number" id="answerInput" class="math-input text-2xl text-center border-2 border-gray-300 rounded-lg px-4 py-2 w-32" placeholder="?">
+                        <button id="submitAnswer" class="ml-4 bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600">Submit</button>
+                    </div>
+                `;
+                
+                const input = document.getElementById('answerInput');
+                const submitBtn = document.getElementById('submitAnswer');
+                
+                input.focus();
+                input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') checkAnswer();
+                });
+                submitBtn.addEventListener('click', checkAnswer);
+                
+                function checkAnswer() {
+                    const userAnswer = parseInt(input.value);
+                    if (userAnswer === answer) {
+                        const multiplier = Math.min(gameState.streak + 1, 5);
+                        gameState.score += (gameState.difficulty + 1) * 10 * multiplier;
+                        gameState.streak++;
+                        gameState.correctAnswers++;
+                        document.getElementById('currentScore').textContent = gameState.score;
+                        input.classList.add('pulse-green');
+                        playSound('correct');
+                        setTimeout(() => {
+                            input.classList.remove('pulse-green');
+                            showNewProblem();
+                        }, 500);
+                    } else {
+                        gameState.streak = 0;
+                        input.classList.add('pulse-red');
+                        playSound('incorrect');
+                        setTimeout(() => {
+                            input.classList.remove('pulse-red');
+                            input.value = '';
+                            input.focus();
+                        }, 500);
+                    }
+                }
+            }
+        }
+
+        function startMultiplicationMaster() {
+            showNewProblem();
+            
+            function showNewProblem() {
+                if (!gameState.isPlaying) return;
+                
+                const maxNum = gameState.difficulty === 0 ? 5 : gameState.difficulty === 1 ? 10 : 12;
+                const num1 = Math.floor(Math.random() * maxNum) + 1;
+                const num2 = Math.floor(Math.random() * maxNum) + 1;
+                const answer = num1 * num2;
+                
+                gameState.currentAnswer = answer;
+                gameState.totalQuestions++;
+                
+                document.getElementById('gameArea').innerHTML = `
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-6">${num1} × ${num2} = ?</div>
+                        <input type="number" id="answerInput" class="math-input text-2xl text-center border-2 border-gray-300 rounded-lg px-4 py-2 w-32" placeholder="?">
+                        <button id="submitAnswer" class="ml-4 bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600">Submit</button>
+                    </div>
+                `;
+                
+                const input = document.getElementById('answerInput');
+                const submitBtn = document.getElementById('submitAnswer');
+                
+                input.focus();
+                input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') checkAnswer();
+                });
+                submitBtn.addEventListener('click', checkAnswer);
+                
+                function checkAnswer() {
+                    const userAnswer = parseInt(input.value);
+                    if (userAnswer === answer) {
+                        gameState.score += (gameState.difficulty + 1) * 15;
+                        gameState.correctAnswers++;
+                        document.getElementById('currentScore').textContent = gameState.score;
+                        input.classList.add('pulse-green');
+                        playSound('correct');
+                        setTimeout(() => {
+                            input.classList.remove('pulse-green');
+                            showNewProblem();
+                        }, 500);
+                    } else {
+                        input.classList.add('pulse-red');
+                        playSound('incorrect');
+                        setTimeout(() => {
+                            input.classList.remove('pulse-red');
+                            input.value = '';
+                            input.focus();
+                        }, 500);
+                    }
+                }
+            }
+        }
+
+        function startDivisionDash() {
+            showNewProblem();
+            
+            function showNewProblem() {
+                if (!gameState.isPlaying) return;
+                
+                let divisor, dividend, answer;
+                
+                if (gameState.difficulty === 0) {
+                    // Easy: division by 2, 5, 10
+                    const divisors = [2, 5, 10];
+                    divisor = divisors[Math.floor(Math.random() * divisors.length)];
+                    answer = Math.floor(Math.random() * 20) + 1;
+                    dividend = divisor * answer;
+                } else {
+                    const maxDivisor = gameState.difficulty === 1 ? 10 : 12;
+                    divisor = Math.floor(Math.random() * maxDivisor) + 1;
+                    answer = Math.floor(Math.random() * 15) + 1;
+                    dividend = divisor * answer;
+                }
+                
+                gameState.currentAnswer = answer;
+                gameState.totalQuestions++;
+                
+                document.getElementById('gameArea').innerHTML = `
+                    <div class="text-center">
+                        <div class="text-4xl font-bold mb-6">${dividend} ÷ ${divisor} = ?</div>
+                        <input type="number" id="answerInput" class="math-input text-2xl text-center border-2 border-gray-300 rounded-lg px-4 py-2 w-32" placeholder="?">
+                        <button id="submitAnswer" class="ml-4 bg-purple-500 text-white px-6 py-2 rounded-lg hover:bg-purple-600">Submit</button>
+                    </div>
+                `;
+                
+                const input = document.getElementById('answerInput');
+                const submitBtn = document.getElementById('submitAnswer');
+                
+                input.focus();
+                input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') checkAnswer();
+                });
+                submitBtn.addEventListener('click', checkAnswer);
+                
+                function checkAnswer() {
+                    const userAnswer = parseInt(input.value);
+                    if (userAnswer === answer) {
+                        gameState.score += (gameState.difficulty + 1) * 20;
+                        gameState.correctAnswers++;
+                        document.getElementById('currentScore').textContent = gameState.score;
+                        input.classList.add('pulse-green');
+                        playSound('correct');
+                        setTimeout(() => {
+                            input.classList.remove('pulse-green');
+                            showNewProblem();
+                        }, 500);
+                    } else {
+                        input.classList.add('pulse-red');
+                        playSound('incorrect');
+                        setTimeout(() => {
+                            input.classList.remove('pulse-red');
+                            input.value = '';
+                            input.focus();
+                        }, 500);
+                    }
+                }
+            }
+        }
+
+        function startMathMatch() {
+            generateMatchPairs();
+            
+            function generateMatchPairs() {
+                const operations = ['+', '-', '×', '÷'];
+                const pairs = [];
+                const maxNum = gameState.difficulty === 0 ? 10 : gameState.difficulty === 1 ? 20 : 50;
+                
+                for (let i = 0; i < 6; i++) {
+                    const operation = operations[Math.floor(Math.random() * operations.length)];
+                    let num1, num2, answer;
+                    
+                    switch (operation) {
+                        case '+':
+                            num1 = Math.floor(Math.random() * maxNum) + 1;
+                            num2 = Math.floor(Math.random() * maxNum) + 1;
+                            answer = num1 + num2;
+                            break;
+                        case '-':
+                            num1 = Math.floor(Math.random() * maxNum) + 1;
+                            num2 = Math.floor(Math.random() * maxNum) + 1;
+                            if (num1 < num2) [num1, num2] = [num2, num1];
+                            answer = num1 - num2;
+                            break;
+                        case '×':
+                            num1 = Math.floor(Math.random() * Math.min(maxNum/5, 12)) + 1;
+                            num2 = Math.floor(Math.random() * Math.min(maxNum/5, 12)) + 1;
+                            answer = num1 * num2;
+                            break;
+                        case '÷':
+                            answer = Math.floor(Math.random() * 15) + 1;
+                            num2 = Math.floor(Math.random() * 10) + 1;
+                            num1 = answer * num2;
+                            break;
+                    }
+                    
+                    pairs.push({
+                        problem: `${num1} ${operation} ${num2}`,
+                        answer: answer,
+                        matched: false
+                    });
+                }
+                
+                gameState.matchPairs = pairs;
+                gameState.selectedProblem = null;
+                gameState.selectedAnswer = null;
+                renderMatchGame();
+            }
+            
+            function renderMatchGame() {
+                const problems = gameState.matchPairs.map(pair => pair.problem);
+                const answers = gameState.matchPairs.map(pair => pair.answer);
+                
+                // Shuffle answers
+                for (let i = answers.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [answers[i], answers[j]] = [answers[j], answers[i]];
+                }
+                
+                document.getElementById('gameArea').innerHTML = `
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <h5 class="font-semibold mb-2 text-center">Problems</h5>
+                            <div class="space-y-2">
+                                ${problems.map((problem, i) => `
+                                    <div class="match-item problem p-3 border-2 border-gray-300 rounded cursor-pointer hover:bg-blue-50 text-center ${gameState.matchPairs[i].matched ? 'bg-green-100 border-green-300' : ''}" data-type="problem" data-index="${i}">
+                                        ${problem}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        <div>
+                            <h5 class="font-semibold mb-2 text-center">Answers</h5>
+                            <div class="space-y-2">
+                                ${answers.map((answer, i) => `
+                                    <div class="match-item answer p-3 border-2 border-gray-300 rounded cursor-pointer hover:bg-blue-50 text-center" data-type="answer" data-value="${answer}">
+                                        ${answer}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                // Add click listeners
+                document.querySelectorAll('.match-item').forEach(item => {
+                    item.addEventListener('click', handleMatchClick);
+                });
+            }
+            
+            function handleMatchClick(e) {
+                const item = e.target;
+                const type = item.dataset.type;
+                
+                if (type === 'problem') {
+                    const index = parseInt(item.dataset.index);
+                    if (gameState.matchPairs[index].matched) return;
+                    
+                    // Clear previous selection
+                    document.querySelectorAll('.problem').forEach(p => p.classList.remove('bg-blue-200', 'border-blue-400'));
+                    
+                    gameState.selectedProblem = index;
+                    item.classList.add('bg-blue-200', 'border-blue-400');
+                } else {
+                    const value = parseInt(item.dataset.value);
+                    
+                    // Clear previous selection
+                    document.querySelectorAll('.answer').forEach(a => a.classList.remove('bg-blue-200', 'border-blue-400'));
+                    
+                    gameState.selectedAnswer = value;
+                    item.classList.add('bg-blue-200', 'border-blue-400');
+                }
+                
+                // Check for match
+                if (gameState.selectedProblem !== null && gameState.selectedAnswer !== null) {
+                    const pair = gameState.matchPairs[gameState.selectedProblem];
+                    if (pair.answer === gameState.selectedAnswer) {
+                        // Correct match
+                        pair.matched = true;
+                        gameState.score += (gameState.difficulty + 1) * 25;
+                        gameState.correctAnswers++;
+                        document.getElementById('currentScore').textContent = gameState.score;
+                        playSound('correct');
+                        
+                        // Check if all matched
+                        if (gameState.matchPairs.every(p => p.matched)) {
+                            gameState.score += 100; // Bonus for completing all matches
+                            document.getElementById('currentScore').textContent = gameState.score;
+                            setTimeout(() => generateMatchPairs(), 1000);
+                        }
+                    } else {
+                        playSound('incorrect');
+                    }
+                    
+                    // Reset selections
+                    gameState.selectedProblem = null;
+                    gameState.selectedAnswer = null;
+                    setTimeout(() => renderMatchGame(), 500);
+                }
+            }
+        }
+
+        function startNumberNinja() {
+            const speed = gameState.difficulty === 0 ? 2000 : gameState.difficulty === 1 ? 1500 : 1000;
+            gameState.ninjaNumbers = [];
+            gameState.targetAnswer = null;
+            
+            generateTargetProblem();
+            
+            function generateTargetProblem() {
+                if (!gameState.isPlaying) return;
+                
+                const num1 = Math.floor(Math.random() * 20) + 1;
+                const num2 = Math.floor(Math.random() * 20) + 1;
+                gameState.targetAnswer = num1 + num2;
+                gameState.totalQuestions++;
+                
+                document.getElementById('gameArea').innerHTML = `
+                    <div class="text-center mb-6">
+                        <div class="text-2xl font-bold mb-2">Target: ${num1} + ${num2} = ?</div>
+                        <div class="text-lg text-gray-600">Tap only the correct answer!</div>
+                    </div>
+                    <div id="ninjaArea" class="relative h-64 border-2 border-gray-300 rounded-lg overflow-hidden bg-gray-50">
+                        <!-- Numbers will appear here -->
+                    </div>
+                `;
+                
+                startNinjaNumbers();
+            }
+            
+            function startNinjaNumbers() {
+                const ninjaArea = document.getElementById('ninjaArea');
+                
+                gameState.ninjaInterval = setInterval(() => {
+                    if (!gameState.isPlaying) {
+                        clearInterval(gameState.ninjaInterval);
+                        return;
+                    }
+                    
+                    // Generate random number (sometimes correct, sometimes wrong)
+                    const isCorrect = Math.random() < 0.3; // 30% chance of correct answer
+                    const number = isCorrect ? gameState.targetAnswer : 
+                        Math.floor(Math.random() * 100) + 1;
+                    
+                    // Create number element
+                    const numberEl = document.createElement('div');
+                    numberEl.className = `absolute text-2xl font-bold cursor-pointer transition-all hover:scale-110 ${isCorrect ? 'text-green-600' : 'text-red-600'}`;
+                    numberEl.textContent = number;
+                    numberEl.style.left = Math.random() * 80 + '%';
+                    numberEl.style.top = '0px';
+                    numberEl.style.userSelect = 'none';
+                    
+                    numberEl.addEventListener('click', () => {
+                        if (isCorrect) {
+                            gameState.score += (gameState.difficulty + 1) * 20;
+                            gameState.correctAnswers++;
+                            document.getElementById('currentScore').textContent = gameState.score;
+                            numberEl.classList.add('celebration');
+                            playSound('correct');
+                            setTimeout(() => generateTargetProblem(), 500);
+                        } else {
+                            numberEl.classList.add('pulse-red');
+                            playSound('incorrect');
+                        }
+                        numberEl.remove();
+                    });
+                    
+                    ninjaArea.appendChild(numberEl);
+                    
+                    // Animate number falling
+                    let position = 0;
+                    const fallInterval = setInterval(() => {
+                        position += 2;
+                        numberEl.style.top = position + 'px';
+                        
+                        if (position > ninjaArea.offsetHeight) {
+                            clearInterval(fallInterval);
+                            numberEl.remove();
+                        }
+                    }, 20);
+                    
+                }, speed);
+            }
+        }
+
+        function startEstimationChallenge() {
+            showEstimationProblem();
+            
+            function showEstimationProblem() {
+                if (!gameState.isPlaying) return;
+                
+                let problem, correctAnswer, options;
+                
+                if (gameState.difficulty === 0) {
+                    // Easy: Simple percentages
+                    const percentage = [10, 20, 25, 50, 75].sort(() => Math.random() - 0.5)[0];
+                    const number = Math.floor(Math.random() * 100) + 20;
+                    correctAnswer = Math.round((percentage / 100) * number);
+                    problem = `${percentage}% of ${number}`;
+                    options = generateOptions(correctAnswer, 5);
+                } else if (gameState.difficulty === 1) {
+                    // Medium: Multiplication estimation
+                    const num1 = Math.floor(Math.random() * 50) + 10;
+                    const num2 = Math.floor(Math.random() * 50) + 10;
+                    correctAnswer = num1 * num2;
+                    problem = `${num1} × ${num2}`;
+                    options = generateOptions(correctAnswer, 50);
+                } else {
+                    // Hard: Complex calculations
+                    const num1 = Math.floor(Math.random() * 200) + 50;
+                    const num2 = Math.floor(Math.random() * 50) + 10;
+                    const num3 = Math.floor(Math.random() * 30) + 5;
+                    correctAnswer = Math.round((num1 + num2) / num3);
+                    problem = `(${num1} + ${num2}) ÷ ${num3}`;
+                    options = generateOptions(correctAnswer, 10);
+                }
+                
+                gameState.currentAnswer = correctAnswer;
+                gameState.totalQuestions++;
+                
+                document.getElementById('gameArea').innerHTML = `
+                    <div class="text-center">
+                        <div class="text-3xl font-bold mb-6">Estimate: ${problem}</div>
+                        <div class="grid grid-cols-2 gap-4 max-w-md mx-auto">
+                            ${options.map(option => `
+                                <button class="estimation-option bg-white border-2 border-gray-300 rounded-lg p-4 text-xl font-semibold hover:bg-blue-50 hover:border-blue-300 transition-all" data-value="${option}">
+                                    ${option}
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+                
+                document.querySelectorAll('.estimation-option').forEach(btn => {
+                    btn.addEventListener('click', checkEstimation);
+                });
+            }
+            
+            function generateOptions(correct, variance) {
+                const options = [correct];
+                while (options.length < 4) {
+                    const option = correct + Math.floor((Math.random() - 0.5) * variance * 2);
+                    if (option > 0 && !options.includes(option)) {
+                        options.push(option);
+                    }
+                }
+                return options.sort(() => Math.random() - 0.5);
+            }
+            
+            function checkEstimation(e) {
+                const userAnswer = parseInt(e.target.dataset.value);
+                const correct = userAnswer === gameState.currentAnswer;
+                
+                if (correct) {
+                    gameState.score += (gameState.difficulty + 1) * 30;
+                    gameState.correctAnswers++;
+                    document.getElementById('currentScore').textContent = gameState.score;
+                    e.target.classList.add('pulse-green');
+                    playSound('correct');
+                } else {
+                    e.target.classList.add('pulse-red');
+                    playSound('incorrect');
+                }
+                
+                setTimeout(() => showEstimationProblem(), 1000);
+            }
+        }
+
+        function startMathDuel() {
+            document.getElementById('gameArea').innerHTML = `
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="text-center border-r-2 border-gray-300 pr-4">
+                        <h5 class="font-bold text-lg mb-4 text-blue-600">Player 1</h5>
+                        <div id="player1Score" class="text-2xl font-bold mb-4">0</div>
+                        <div id="player1Problem" class="text-xl mb-4">Ready!</div>
+                        <input type="number" id="player1Input" class="math-input text-center border-2 border-blue-300 rounded px-3 py-2 w-24" placeholder="?">
+                    </div>
+                    <div class="text-center pl-4">
+                        <h5 class="font-bold text-lg mb-4 text-red-600">Player 2</h5>
+                        <div id="player2Score" class="text-2xl font-bold mb-4">0</div>
+                        <div id="player2Problem" class="text-xl mb-4">Ready!</div>
+                        <input type="number" id="player2Input" class="math-input text-center border-2 border-red-300 rounded px-3 py-2 w-24" placeholder="?">
+                    </div>
+                </div>
+                <div class="text-center mt-6">
+                    <button id="startDuel" class="bg-orange-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-orange-600">
+                        Start Duel!
+                    </button>
+                </div>
+            `;
+            
+            gameState.player1Score = 0;
+            gameState.player2Score = 0;
+            gameState.currentProblems = { player1: null, player2: null };
+            
+            document.getElementById('startDuel').addEventListener('click', startDuelRound);
+            
+            function startDuelRound() {
+                generateDuelProblems();
+                
+                const p1Input = document.getElementById('player1Input');
+                const p2Input = document.getElementById('player2Input');
+                
+                p1Input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') checkDuelAnswer('player1');
+                });
+                
+                p2Input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') checkDuelAnswer('player2');
+                });
+                
+                p1Input.focus();
+            }
+            
+            function generateDuelProblems() {
+                const maxNum = gameState.difficulty === 0 ? 10 : gameState.difficulty === 1 ? 20 : 50;
+                
+                // Same problem for both players
+                const num1 = Math.floor(Math.random() * maxNum) + 1;
+                const num2 = Math.floor(Math.random() * maxNum) + 1;
+                const operation = ['+', '-', '×'][Math.floor(Math.random() * 3)];
+                
+                let answer;
+                let problemText;
+                
+                switch (operation) {
+                    case '+':
+                        answer = num1 + num2;
+                        problemText = `${num1} + ${num2}`;
+                        break;
+                    case '-':
+                        const larger = Math.max(num1, num2);
+                        const smaller = Math.min(num1, num2);
+                        answer = larger - smaller;
+                        problemText = `${larger} - ${smaller}`;
+                        break;
+                    case '×':
+                        answer = num1 * num2;
+                        problemText = `${num1} × ${num2}`;
+                        break;
+                }
+                
+                gameState.currentProblems = {
+                    player1: { problem: problemText, answer: answer, solved: false },
+                    player2: { problem: problemText, answer: answer, solved: false }
+                };
+                gameState.totalQuestions++;
+                
+                document.getElementById('player1Problem').textContent = problemText + ' = ?';
+                document.getElementById('player2Problem').textContent = problemText + ' = ?';
+                
+                document.getElementById('player1Input').value = '';
+                document.getElementById('player2Input').value = '';
+            }
+            
+            function checkDuelAnswer(player) {
+                const input = document.getElementById(`${player}Input`);
+                const userAnswer = parseInt(input.value);
+                const problem = gameState.currentProblems[player];
+                
+                if (userAnswer === problem.answer && !problem.solved) {
+                    problem.solved = true;
+                    
+                    if (player === 'player1') {
+                        gameState.player1Score += (gameState.difficulty + 1) * 25;
+                        document.getElementById('player1Score').textContent = gameState.player1Score;
+                    } else {
+                        gameState.player2Score += (gameState.difficulty + 1) * 25;
+                        document.getElementById('player2Score').textContent = gameState.player2Score;
+                    }
+                    
+                    // Update main score with higher player score
+                    gameState.score = Math.max(gameState.player1Score, gameState.player2Score);
+                    gameState.correctAnswers++;
+                    document.getElementById('currentScore').textContent = gameState.score;
+                    
+                    input.classList.add('pulse-green');
+                    playSound('correct');
+                    
+                    setTimeout(() => {
+                        input.classList.remove('pulse-green');
+                        startDuelRound();
+                    }, 1000);
+                } else if (!problem.solved) {
+                    input.classList.add('pulse-red');
+                    playSound('incorrect');
+                    setTimeout(() => {
+                        input.classList.remove('pulse-red');
+                        input.value = '';
+                    }, 500);
+                }
+            }
+        }
+
+        function startEquationRace() {
+            showEquationProblem();
+            
+            function showEquationProblem() {
+                if (!gameState.isPlaying) return;
+                
+                let equation, answer;
+                
+                if (gameState.difficulty === 0) {
+                    // Medium: Simple PEMDAS
+                    const a = Math.floor(Math.random() * 10) + 1;
+                    const b = Math.floor(Math.random() * 10) + 1;
+                    const c = Math.floor(Math.random() * 10) + 1;
+                    equation = `${a} + ${b} × ${c}`;
+                    answer = a + (b * c);
+                } else if (gameState.difficulty === 1) {
+                    // Hard: More complex
+                    const a = Math.floor(Math.random() * 20) + 5;
+                    const b = Math.floor(Math.random() * 10) + 2;
+                    const c = Math.floor(Math.random() * 10) + 1;
+                    const d = Math.floor(Math.random() * 5) + 1;
+                    equation = `(${a} + ${b}) ÷ ${c} × ${d}`;
+                    answer = Math.floor((a + b) / c) * d;
+                } else {
+                    // Expert: Very complex
+                    const a = Math.floor(Math.random() * 30) + 10;
+                    const b = Math.floor(Math.random() * 15) + 5;
+                    const c = Math.floor(Math.random() * 8) + 2;
+                    const d = Math.floor(Math.random() * 10) + 1;
+                    const e = Math.floor(Math.random() * 5) + 1;
+                    equation = `${a} - ${b} + ${c} × ${d} ÷ ${e}`;
+                    answer = a - b + Math.floor((c * d) / e);
+                }
+                
+                gameState.currentAnswer = answer;
+                gameState.totalQuestions++;
+                
+                document.getElementById('gameArea').innerHTML = `
+                    <div class="text-center">
+                        <div class="text-3xl font-bold mb-2">Solve:</div>
+                        <div class="text-4xl font-bold mb-6 text-blue-600">${equation} = ?</div>
+                        <div class="text-sm text-gray-600 mb-4">Remember: PEMDAS (Parentheses, Exponents, Multiplication/Division, Addition/Subtraction)</div>
+                        <input type="number" id="answerInput" class="math-input text-2xl text-center border-2 border-gray-300 rounded-lg px-4 py-2 w-32" placeholder="?">
+                        <button id="submitAnswer" class="ml-4 bg-teal-500 text-white px-6 py-2 rounded-lg hover:bg-teal-600">Submit</button>
+                    </div>
+                `;
+                
+                const input = document.getElementById('answerInput');
+                const submitBtn = document.getElementById('submitAnswer');
+                
+                input.focus();
+                input.addEventListener('keypress', (e) => {
+                    if (e.key === 'Enter') checkEquationAnswer();
+                });
+                submitBtn.addEventListener('click', checkEquationAnswer);
+                
+                function checkEquationAnswer() {
+                    const userAnswer = parseInt(input.value);
+                    if (userAnswer === answer) {
+                        gameState.score += (gameState.difficulty + 2) * 30;
+                        gameState.correctAnswers++;
+                        document.getElementById('currentScore').textContent = gameState.score;
+                        input.classList.add('pulse-green');
+                        playSound('correct');
+                        setTimeout(() => {
+                            input.classList.remove('pulse-green');
+                            showEquationProblem();
+                        }, 500);
+                    } else {
+                        input.classList.add('pulse-red');
+                        playSound('incorrect');
+                        setTimeout(() => {
+                            input.classList.remove('pulse-red');
+                            input.value = '';
+                            input.focus();
+                        }, 500);
+                    }
+                }
+            }
+        }
+
+        function startMemoryMathMix() {
+            const gridSizes = [
+                { rows: 4, cols: 4 },
+                { rows: 4, cols: 6 },
+                { rows: 6, cols: 6 }
+            ];
+            
+            const gridSize = gridSizes[gameState.difficulty];
+            const totalCards = gridSize.rows * gridSize.cols;
+            const pairs = totalCards / 2;
+            
+            gameState.memoryCards = [];
+            gameState.flippedCards = [];
+            gameState.matchedPairs = 0;
+            
+            // Generate math problems and answers
+            for (let i = 0; i < pairs; i++) {
+                const num1 = Math.floor(Math.random() * 15) + 1;
+                const num2 = Math.floor(Math.random() * 15) + 1;
+                const operation = ['+', '-', '×'][Math.floor(Math.random() * 3)];
+                
+                let problem, answer;
+                switch (operation) {
+                    case '+':
+                        problem = `${num1}+${num2}`;
+                        answer = num1 + num2;
+                        break;
+                    case '-':
+                        const larger = Math.max(num1, num2);
+                        const smaller = Math.min(num1, num2);
+                        problem = `${larger}-${smaller}`;
+                        answer = larger - smaller;
+                        break;
+                    case '×':
+                        const smallNum1 = Math.min(num1, 12);
+                        const smallNum2 = Math.min(num2, 12);
+                        problem = `${smallNum1}×${smallNum2}`;
+                        answer = smallNum1 * smallNum2;
+                        break;
+                }
+                
+                gameState.memoryCards.push(
+                    { id: i * 2, type: 'problem', content: problem, matched: false },
+                    { id: i * 2 + 1, type: 'answer', content: answer, matched: false, pairId: i * 2 }
+                );
+            }
+            
+            // Shuffle cards
+            gameState.memoryCards.sort(() => Math.random() - 0.5);
+            
+            renderMemoryGrid(gridSize);
+        }
+        
+        function renderMemoryGrid(gridSize) {
+            document.getElementById('gameArea').innerHTML = `
+                <div class="memory-grid grid gap-2 max-w-2xl mx-auto" style="grid-template-columns: repeat(${gridSize.cols}, 1fr);">
+                    ${gameState.memoryCards.map((card, index) => `
+                        <div class="memory-card h-16 w-16 ${card.matched ? 'matched' : ''}" data-index="${index}">
+                            <div class="memory-card-inner w-full h-full relative">
+                                <div class="memory-card-front absolute w-full h-full bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold cursor-pointer">
+                                    ?
+                                </div>
+                                <div class="memory-card-back absolute w-full h-full bg-white border-2 border-gray-300 rounded-lg flex items-center justify-center font-bold text-sm">
+                                    ${card.content}
+                                </div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+            
+            document.querySelectorAll('.memory-card:not(.matched)').forEach(card => {
+                card.addEventListener('click', flipMemoryCard);
+            });
+        }
+        
+        function flipMemoryCard(e) {
+            const cardEl = e.currentTarget;
+            const cardIndex = parseInt(cardEl.dataset.index);
+            const card = gameState.memoryCards[cardIndex];
+            
+            if (gameState.flippedCards.length >= 2 || cardEl.classList.contains('flipped') || card.matched) {
+                return;
+            }
+            
+            cardEl.classList.add('flipped');
+            gameState.flippedCards.push({ element: cardEl, card: card, index: cardIndex });
+            
+            if (gameState.flippedCards.length === 2) {
+                setTimeout(checkMemoryMatch, 1000);
+            }
+        }
+        
+        function checkMemoryMatch() {
+            const [first, second] = gameState.flippedCards;
+            
+            // Check if it's a valid pair (problem and its answer)
+            let isMatch = false;
+            if (first.card.type === 'problem' && second.card.type === 'answer') {
+                // Calculate answer for first card's problem
+                const problem = first.card.content;
+                const calculatedAnswer = eval(problem.replace('×', '*'));
+                isMatch = calculatedAnswer === second.card.content;
+            } else if (first.card.type === 'answer' && second.card.type === 'problem') {
+                // Calculate answer for second card's problem
+                const problem = second.card.content;
+                const calculatedAnswer = eval(problem.replace('×', '*'));
+                isMatch = calculatedAnswer === first.card.content;
+            }
+            
+            if (isMatch) {
+                // Match found
+                first.card.matched = true;
+                second.card.matched = true;
+                first.element.classList.add('matched');
+                second.element.classList.add('matched');
+                
+                gameState.matchedPairs++;
+                gameState.score += (gameState.difficulty + 1) * 40;
+                gameState.correctAnswers++;
+                document.getElementById('currentScore').textContent = gameState.score;
+                playSound('correct');
+                
+                // Check if all pairs matched
+                if (gameState.matchedPairs === gameState.memoryCards.length / 2) {
+                    gameState.score += 200; // Bonus for completing memory game
+                    document.getElementById('currentScore').textContent = gameState.score;
+                    setTimeout(() => startMemoryMathMix(), 2000); // Start new round
+                }
+            } else {
+                // No match
+                setTimeout(() => {
+                    first.element.classList.remove('flipped');
+                    second.element.classList.remove('flipped');
+                    playSound('incorrect');
+                }, 500);
+            }
+            
+            gameState.flippedCards = [];
+        }
+
+        // Utility Functions
+        function getHighScore(gameId) {
+            return parseInt(localStorage.getItem(`highScore_${gameId}`) || '0');
+        }
+
+        function setHighScore(gameId, score) {
+            localStorage.setItem(`highScore_${gameId}`, score.toString());
+        }
+
+        function updateTotalScore() {
+            document.getElementById('totalScore').textContent = `${totalXP} XP`;
+        }
+
+        function playSound(type) {
+            // Create audio context and play sounds
+            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            switch (type) {
+                case 'correct':
+                    oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+                    oscillator.frequency.setValueAtTime(1000, audioContext.currentTime + 0.1);
+                    break;
+                case 'incorrect':
+                    oscillator.frequency.setValueAtTime(300, audioContext.currentTime);
+                    oscillator.frequency.setValueAtTime(200, audioContext.currentTime + 0.1);
+                    break;
+                case 'achievement':
+                    oscillator.frequency.setValueAtTime(600, audioContext.currentTime);
+                    oscillator.frequency.setValueAtTime(800, audioContext.currentTime + 0.1);
+                    oscillator.frequency.setValueAtTime(1000, audioContext.currentTime + 0.2);
+                    break;
+                case 'gameOver':
+                    oscillator.frequency.setValueAtTime(400, audioContext.currentTime);
+                    oscillator.frequency.setValueAtTime(300, audioContext.currentTime + 0.2);
+                    break;
+            }
+            
+            gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+            
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + 0.3);
+        }
+
+        // Static Pages
+        function showStaticPage(pageType) {
+            document.getElementById('staticPageModal').classList.remove('hidden');
+            const titleEl = document.getElementById('staticPageTitle');
+            const contentEl = document.getElementById('staticPageContent');
+            
+            switch (pageType) {
+                case 'privacy':
+                    titleEl.textContent = 'Privacy Policy';
+                    contentEl.innerHTML = `
+                        <div class="prose max-w-none">
+                            <h4>Privacy Policy for Fast Math Games</h4>
+                            <p><strong>Effective Date:</strong> ${new Date().toLocaleDateString()}</p>
+                            
+                            <h5>Information We Collect</h5>
+                            <p>Fast Math Games is committed to protecting your privacy. We collect minimal information to provide our educational gaming service:</p>
+                            <ul>
+                                <li><strong>Local Storage:</strong> Game scores and progress are stored locally on your device</li>
+                                <li><strong>Analytics:</strong> We use Google Analytics to understand how our games are used</li>
+                                <li><strong>Advertising:</strong> We display ads through Google AdSense</li>
+                            </ul>
+                            
+                            <h5>How We Use Information</h5>
+                            <ul>
+                                <li>To save your game progress and high scores</li>
+                                <li>To improve our games and user experience</li>
+                                <li>To display relevant advertisements</li>
+                            </ul>
+                            
+                            <h5>Children's Privacy</h5>
+                            <p>Our games are designed for children ages 6-13. We do not knowingly collect personal information from children. All game data is stored locally on the device.</p>
+                            
+                            <h5>Third-Party Services</h5>
+                            <ul>
+                                <li><strong>Google Analytics:</strong> For usage analytics</li>
+                                <li><strong>Google AdSense:</strong> For displaying advertisements</li>
+                            </ul>
+                            
+                            <h5>Contact Us</h5>
+                            <p>If you have questions about this Privacy Policy, please contact us through our Contact page.</p>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'terms':
+                    titleEl.textContent = 'Terms of Use';
+                    contentEl.innerHTML = `
+                        <div class="prose max-w-none">
+                            <h4>Terms of Use for Fast Math Games</h4>
+                            <p><strong>Effective Date:</strong> ${new Date().toLocaleDateString()}</p>
+                            
+                            <h5>Acceptance of Terms</h5>
+                            <p>By using Fast Math Games, you agree to these Terms of Use. If you do not agree with these terms, please do not use our service.</p>
+                            
+                            <h5>Description of Service</h5>
+                            <p>Fast Math Games provides free, educational math games for children, students, parents, and teachers. Our games are designed to improve mental math skills through interactive gameplay.</p>
+                            
+                            <h5>Permitted Use</h5>
+                            <ul>
+                                <li>Educational purposes in schools, homes, and learning environments</li>
+                                <li>Personal skill development and practice</li>
+                                <li>Fair use for educational and non-commercial purposes</li>
+                            </ul>
+                            
+                            <h5>Prohibited Activities</h5>
+                            <ul>
+                                <li>Attempting to reverse engineer or copy our games</li>
+                                <li>Using automated tools to manipulate scores</li>
+                                <li>Any activity that disrupts the service for other users</li>
+                            </ul>
+                            
+                            <h5>Intellectual Property</h5>
+                            <p>Fast Math Games and all related content are protected by copyright and other intellectual property laws.</p>
+                            
+                            <h5>Limitation of Liability</h5>
+                            <p>Fast Math Games is provided "as is" without warranties. We are not liable for any damages arising from use of our service.</p>
+                            
+                            <h5>Changes to Terms</h5>
+                            <p>We may update these terms periodically. Continued use of our service constitutes acceptance of any changes.</p>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'contact':
+                    titleEl.textContent = 'Contact Us';
+                    contentEl.innerHTML = `
+                        <div class="prose max-w-none">
+                            <h4>Get in Touch</h4>
+                            <p>We'd love to hear from you! Whether you have questions, suggestions, or feedback about our math games, please don't hesitate to reach out.</p>
+                            
+                            <h5>For Parents and Teachers</h5>
+                            <p>If you're using our games in educational settings and have questions about features, accessibility, or educational alignment, we're here to help.</p>
+                            
+                            <h5>Technical Support</h5>
+                            <p>Experiencing issues with our games? Let us know what device and browser you're using, and we'll work to resolve any problems quickly.</p>
+                            
+                            <h5>Feature Requests</h5>
+                            <p>Have ideas for new games or features? We love hearing suggestions from our community of learners and educators.</p>
+                            
+                            <h5>Contact Information</h5>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <p><strong>Email:</strong> support@fastmathgames.com</p>
+                                <p><strong>Response Time:</strong> We typically respond within 24-48 hours</p>
+                                <p><strong>Best Time to Contact:</strong> Monday-Friday, 9 AM - 5 PM EST</p>
+                            </div>
+                            
+                            <h5>Frequently Asked Questions</h5>
+                            <div class="space-y-4">
+                                <div>
+                                    <p><strong>Q: Are the games really free?</strong></p>
+                                    <p>A: Yes! All our math games are completely free to play with no hidden costs or premium features.</p>
+                                </div>
+                                <div>
+                                    <p><strong>Q: Do I need to create an account?</strong></p>
+                                    <p>A: No account needed! Your scores are saved locally on your device automatically.</p>
+                                </div>
+                                <div>
+                                    <p><strong>Q: Can I use these games in my classroom?</strong></p>
+                                    <p>A: Absolutely! Our games are perfect for classroom use and educational settings.</p>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'faq':
+                    titleEl.textContent = 'Frequently Asked Questions';
+                    contentEl.innerHTML = `
+                        <div class="prose max-w-none">
+                            <h4>Frequently Asked Questions</h4>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <h5>General Questions</h5>
+                                    
+                                    <div class="ml-4 space-y-4">
+                                        <div>
+                                            <p><strong>Q: What age group are these games designed for?</strong></p>
+                                            <p>A: Our games are primarily designed for ages 6-13, but they're suitable for anyone wanting to improve their mental math skills.</p>
+                                        </div>
+                                        
+                                        <div>
+                                            <p><strong>Q: Do I need to download anything?</strong></p>
+                                            <p>A: No! All games run directly in your web browser with no downloads required.</p>
+                                        </div>
+                                        
+                                        <div>
+                                            <p><strong>Q: Can I play on mobile devices?</strong></p>
+                                            <p>A: Yes! Our games work on phones, tablets, and computers with touch-friendly controls.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h5>Gameplay Questions</h5>
+                                    
+                                    <div class="ml-4 space-y-4">
+                                        <div>
+                                            <p><strong>Q: How are scores calculated?</strong></p>
+                                            <p>A: Scores are based on correct answers, difficulty level, and sometimes speed or streak bonuses. Higher difficulty levels earn more points.</p>
+                                        </div>
+                                        
+                                        <div>
+                                            <p><strong>Q: Are my high scores saved?</strong></p>
+                                            <p>A: Yes! High scores are automatically saved in your browser's local storage.</p>
+                                        </div>
+                                        
+                                        <div>
+                                            <p><strong>Q: What is XP and how do I earn it?</strong></p>
+                                            <p>A: XP (Experience Points) represent your overall progress. You earn XP by playing games, with bonuses for accuracy and difficulty.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h5>Educational Questions</h5>
+                                    
+                                    <div class="ml-4 space-y-4">
+                                        <div>
+                                            <p><strong>Q: How do these games help with math learning?</strong></p>
+                                            <p>A: Our games build mental math fluency, number sense, and problem-solving speed through repetitive practice in a fun, engaging format.</p>
+                                        </div>
+                                        
+                                        <div>
+                                            <p><strong>Q: Are the games aligned with math standards?</strong></p>
+                                            <p>A: Yes! Our games cover fundamental math concepts taught in elementary and middle school curricula.</p>
+                                        </div>
+                                        
+                                        <div>
+                                            <p><strong>Q: Can teachers track student progress?</strong></p>
+                                            <p>A: Currently, scores are saved locally on each device. We're working on teacher dashboard features for future updates.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    break;
+                    
+                case 'tips':
+                    titleEl.textContent = 'Math Tips & Strategies';
+                    contentEl.innerHTML = `
+                        <div class="prose max-w-none">
+                            <h4>Math Tips & Strategies</h4>
+                            <p>Improve your mental math skills with these proven strategies and tips!</p>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <h5>Addition Strategies</h5>
+                                    <ul>
+                                        <li><strong>Make 10:</strong> Break numbers to make 10 first (7+5 = 7+3+2 = 10+2 = 12)</li>
+                                        <li><strong>Doubles:</strong> Memorize doubles (6+6=12) then use near-doubles (6+7=13)</li>
+                                        <li><strong>Counting Up:</strong> Start with the larger number and count up</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h5>Subtraction Strategies</h5>
+                                    <ul>
+                                        <li><strong>Counting Up:</strong> From the smaller to larger number (12-9: 9→10→12 = 3)</li>
+                                        <li><strong>Think Addition:</strong> What plus 9 equals 12? (9+?=12)</li>
+                                        <li><strong>Break Apart:</strong> Subtract in parts (15-7 = 15-5-2 = 10-2 = 8)</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h5>Multiplication Tips</h5>
+                                    <ul>
+                                        <li><strong>Skip Counting:</strong> Practice counting by 2s, 5s, 10s</li>
+                                        <li><strong>Finger Tricks:</strong> Use finger methods for 9s tables</li>
+                                        <li><strong>Patterns:</strong> Notice patterns (anything × 10 ends in 0)</li>
+                                        <li><strong>Break Apart:</strong> 7×8 = 7×4 + 7×4 = 28+28 = 56</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h5>Division Strategies</h5>
+                                    <ul>
+                                        <li><strong>Think Multiplication:</strong> What times 4 equals 20? (20÷4)</li>
+                                        <li><strong>Use Fact Families:</strong> If 6×7=42, then 42÷6=7</li>
+                                        <li><strong>Estimate First:</strong> Is the answer closer to 5 or 10?</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h5>General Tips for Success</h5>
+                                    <ul>
+                                        <li><strong>Practice Daily:</strong> Even 10 minutes daily builds fluency</li>
+                                        <li><strong>Start Easy:</strong> Build confidence with easier levels first</li>
+                                        <li><strong>Learn Patterns:</strong> Math is full of helpful patterns</li>
+                                        <li><strong>Stay Positive:</strong> Mistakes are part of learning!</li>
+                                        <li><strong>Use Multiple Strategies:</strong> Different methods work for different people</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h5>Memory Techniques</h5>
+                                    <ul>
+                                        <li><strong>Flashcards:</strong> Practice fact families regularly</li>
+                                        <li><strong>Songs & Rhymes:</strong> Many multiplication songs available online</li>
+                                        <li><strong>Visual Aids:</strong> Draw arrays or use manipulatives</li>
+                                        <li><strong>Real-World Practice:</strong> Use math in cooking, shopping, games</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    break;
+            }
+        }
+
+        function closeStaticPage() {
+            document.getElementById('staticPageModal').classList.add('hidden');
+        }
+
+        // Service Worker Registration (for caching and offline support)
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('data:application/javascript,const CACHE_NAME="fast-math-games-v1";const urlsToCache=["/"];self.addEventListener("install",function(event){event.waitUntil(caches.open(CACHE_NAME).then(function(cache){return cache.addAll(urlsToCache)}))});self.addEventListener("fetch",function(event){event.respondWith(caches.match(event.request).then(function(response){if(response){return response}return fetch(event.request)}))});')
+                .catch(error => console.log('ServiceWorker registration failed'));
+        }
+    </script>
+</body>
+</html>
